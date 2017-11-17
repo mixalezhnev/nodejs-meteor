@@ -1,5 +1,6 @@
-const MongoClient = require('mongodb').MongoClient,
-  assert = require('assert');
+import lodash from 'lodash/fp';
+import { MongoClient } from 'mongodb';
+import assert from 'assert';
 
 // connectin url
 const url = 'mongodb://localhost:27017/fantastic';
@@ -10,7 +11,9 @@ MongoClient.connect(url, (err, db) => {
   console.log('Connected successfully to the server');
 
   insertDocuments(db, () => { findDocuments(db, () => {
-     db.close();
+    updateDocument(db, () => {
+      db.close();
+    })
    });
   });
 });
@@ -49,7 +52,7 @@ const updateDocument = (db, callback) => {
   // update document where a is 2, set b equal to 1
   collection.updateOne({ a: 2 }, { $set: { b: 1} }, (err, result) => {
     assert.equal(err, null);
-    asserrt.equal(1, result.result.n);
+    assert.equal(1, result.result.n);
     console.log('Updated the document with the field a equal to 2');
     callback(result);
   });
