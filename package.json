@@ -4,11 +4,15 @@
   "description": "Useless tryings to create node + mongo project",
   "main": "hello-world.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
     "lodash": "^4.17.4",
     "mongodb": "^2.2.33"
   },
