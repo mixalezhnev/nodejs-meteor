@@ -14,7 +14,9 @@
     "express-handlebars": "^3.0.0",
     "lodash": "^4.17.4",
     "mongodb": "^2.2.33",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
